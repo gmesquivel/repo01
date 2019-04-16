@@ -1,5 +1,5 @@
 package interfaces;
-public class Persona implements Comparable {
+public class Persona implements Comparable<Persona> {
 	private String nombre;
 	private int edad;
 	
@@ -22,10 +22,10 @@ public class Persona implements Comparable {
 	}
 	
 	@Override
-	public boolean mayorQue(Object objeto) {
+	public boolean mayorQue(Persona otro) {
 		boolean respuesta;
 		
-		if (this.getEdad() > ((Persona)objeto).getEdad()) {
+		if (this.getEdad() > otro.getEdad()) {
 			respuesta = true;
 		} else {
 			respuesta = false;
@@ -33,10 +33,10 @@ public class Persona implements Comparable {
 		return respuesta;
 	}
 	@Override
-	public boolean menorQue(Object objeto) {
+	public boolean menorQue(Persona otro) {
 		boolean respuesta;
 		
-		if (this.getEdad() < ((Persona)objeto).getEdad()) {
+		if (this.getEdad() < otro.getEdad()) {
 			respuesta = true;
 		} else {
 			respuesta = false;
@@ -44,10 +44,10 @@ public class Persona implements Comparable {
 		return respuesta;
 	}
 	@Override
-	public boolean igualQue(Object objeto) {
+	public boolean igualQue(Persona otro) {
 		boolean respuesta;
 		
-		if (this.getEdad() == ((Persona)objeto).getEdad()) {
+		if (this.getEdad() == otro.getEdad()) {
 			respuesta = true;
 		} else {
 			respuesta = false;
